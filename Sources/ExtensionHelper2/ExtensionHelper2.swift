@@ -2,21 +2,21 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 public struct TwoView: View {
-    public init(whenComplete: @escaping () -> ()) {
+    public init(whenComplete: @escaping (String) -> ()) {
         self.whenComplete = whenComplete
     }
     
-    var whenComplete: () -> ()
+    var whenComplete: (String) -> ()
     @State var is_two_chuyen_man = false
     @State var is_two_load_hide = false
-    @State var is_two_ktra_mat_khau: String = ""
+    @State public var is_two_ktra_mat_khau: String = ""
     @State var is_two_vui_long_cho = true
     
     public var body: some View {
         ZStack {
             if is_two_chuyen_man {
-                Color.red.onAppear {
-                    self.whenComplete()
+                Color.clear.onAppear {
+                    self.whenComplete(is_two_ktra_mat_khau)
                 }
             } else {
                 if is_two_load_hide {
