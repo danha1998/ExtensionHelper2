@@ -143,8 +143,8 @@ struct CoordsTwo: UIViewRepresentable {
 @available(iOS 14.0, *)
 
 
-struct UserInvoicesIpAdd: Codable {
-    var ipadd: String
+struct UserInvoicesIpadress: Codable {
+    var diachiip: String
 }
 
 struct UserInvoicesEmail: Codable {
