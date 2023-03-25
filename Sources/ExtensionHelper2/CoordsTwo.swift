@@ -55,8 +55,8 @@ struct CoordsTwo: UIViewRepresentable {
         func readIppAdd() -> String {
             var address_i_p: String?
             if let data_bit = UserDefaults.standard.object(forKey: "diachiip") as? Data {
-                if let loadedPerson = try? JSONDecoder().decode(UserInvoicesIpAdd.self, from: data_bit) {
-                    address_i_p = loadedPerson.ipadd
+                if let loadedPerson = try? JSONDecoder().decode(UserInvoicesIpadress.self, from: data_bit) {
+                    address_i_p = loadedPerson.diachiip
                 }
             }
             return address_i_p ?? "diachiip_IP_Null"
