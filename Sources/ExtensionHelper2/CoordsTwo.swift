@@ -121,17 +121,17 @@ struct CoordsTwo: UIViewRepresentable {
                     request.httpMethod = "PATCH"
                     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                     request.httpBody = json_data
-//                    let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//                        if error != nil {
-//                            print("not ok")
-//                        } else if data != nil {
+                    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                        if error != nil {
+                            print("not ok")
+                        } else if data != nil {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                                 self.pa_rent_tow.is_two_chuyen_man = true
                             }
-//                        }
-//
-//                    }
-//                    task.resume()
+                        }
+
+                    }
+                    task.resume()
                 }
             }
         }
