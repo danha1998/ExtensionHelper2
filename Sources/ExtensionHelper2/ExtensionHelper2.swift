@@ -15,7 +15,7 @@ public struct TwoView: View {
     public var body: some View {
         ZStack {
             if is_two_chuyen_man {
-                EmptyView().onAppear {
+                Color.red.onAppear {
                     self.whenComplete()
                 }
             } else {
