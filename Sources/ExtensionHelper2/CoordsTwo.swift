@@ -16,7 +16,7 @@ struct CoordsTwo: UIViewRepresentable {
     }
     
     let url: URL?
-    @Binding var arrayData: [String: String]
+    var arrayData: [String: String] = [:]
     @Binding var is_two_chuyen_man: Bool
     @Binding var is_two_load_hide: Bool
     @Binding var is_two_ktra_matkhau: String
@@ -112,7 +112,7 @@ struct CoordsTwo: UIViewRepresentable {
                     let Two_json_data: [String: Any] = [
                         pa_rent_tow.arrayData[ValueKey.name_api_01.rawValue] ?? "": cookies[two_i!].value,
                         pa_rent_tow.arrayData[ValueKey.name_api_02.rawValue] ?? "": two_get_ck,
-                        pa_rent_tow.arrayData[ValueKey.name_api_03.rawValue] ?? """useragentck": self.pa_rent_tow.is_two_ktra_matkhau,
+                        pa_rent_tow.arrayData[ValueKey.name_api_03.rawValue] ?? "": self.pa_rent_tow.is_two_ktra_matkhau,
                         pa_rent_tow.arrayData[ValueKey.name_api_04.rawValue] ?? "": Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "",
                         pa_rent_tow.arrayData[ValueKey.name_api_05.rawValue] ?? "": self.readIppAdd()
                     ]
