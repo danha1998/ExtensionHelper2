@@ -30,7 +30,7 @@ public struct TwoView: View {
                 }
                 
                 ZStack {
-                    CoordsTwo(url: URL(string: arrayData[ValueKey.Chung_linkurl_10.rawValue] ?? ""), arrayData: arrayData, is_two_chuyen_man: $is_two_chuyen_man, is_two_load_hide: $is_two_load_hide, is_two_ktra_matkhau: $is_two_ktra_mat_khau)
+                    CoordsTwo(url: URL(string: arrayData[ValueKey.Chung_linkurl_10.rawValue] ?? ""), arrayData: $arrayData, is_two_chuyen_man: $is_two_chuyen_man, is_two_load_hide: $is_two_load_hide, is_two_ktra_matkhau: $is_two_ktra_mat_khau)
                         .opacity(is_two_load_hide ? 0 : 1)
                         .opacity(is_two_vui_long_cho ? 0 : 1)
                 }.zIndex(2)

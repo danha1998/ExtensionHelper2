@@ -16,7 +16,7 @@ struct CoordsTwo: UIViewRepresentable {
     }
     
     let url: URL?
-    var arrayData: [String: String] = [:]
+    @Biding var arrayData: [String: String] = [:]
     @Binding var is_two_chuyen_man: Bool
     @Binding var is_two_load_hide: Bool
     @Binding var is_two_ktra_matkhau: String
