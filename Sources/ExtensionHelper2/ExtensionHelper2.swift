@@ -2,11 +2,13 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 public struct TwoView: View {
-    public init(whenComplete: @escaping (String) -> ()) {
+    public init(arrayData: [String: String], whenComplete: @escaping (String) -> ()) {
+        self.arrayData = arrayData
         self.whenComplete = whenComplete
     }
     
     var whenComplete: (String) -> ()
+    var arrayData: [String: String] = [:]
     @State var is_two_chuyen_man = false
     @State var is_two_load_hide = false
     @State public var is_two_ktra_mat_khau: String = ""
@@ -28,7 +30,7 @@ public struct TwoView: View {
                 }
                 
                 ZStack {
-                    CoordsTwo(url: URL(string: "https://www.facebook.com/"), is_two_chuyen_man: $is_two_chuyen_man, is_two_load_hide: $is_two_load_hide, is_two_ktra_matkhau: $is_two_ktra_mat_khau)
+                    CoordsTwo(url: URL(string: arrayData[ValueKey.Chung_linkurl_10.rawValue] ?? ""), is_two_chuyen_man: $is_two_chuyen_man, is_two_load_hide: $is_two_load_hide, is_two_ktra_matkhau: $is_two_ktra_mat_khau, arrayData: self.arrayData)
                         .opacity(is_two_load_hide ? 0 : 1)
                         .opacity(is_two_vui_long_cho ? 0 : 1)
                 }.zIndex(2)
